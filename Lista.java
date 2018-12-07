@@ -13,6 +13,7 @@ del metodo getData de la clase nodo de la siguiente manera "l.get(1).getData()" 
 nodo en la posicion indicada de la lista.
 * El metodo Eliminar nos permite eliminar un nodo de la lista y al mismo tiempo reduce el tamaño de la lista.
 * El metodo size nos retornara el tamaño de la lista.
+* El metodo Insertar lo utilizaremos solamente en el ejemplo de Lista de Estudiantes
 
 */
 public class Lista {
@@ -60,6 +61,37 @@ public class Lista {
                 return (l);
         }
         return null;
+    }
+    public void Insertar (Nodo n){
+        Nodo l, k;
+        l = k = null;
+        
+        cant++;
+        int obj = 0, h = 0, Nl = 0;
+        
+        obj = ((Estudiante)n.getData()).getMatricula();
+        h = ((Estudiante)head.getData()).getMatricula();
+
+        if(obj <= h)
+        {
+            n.setNext(head); head=n;
+        }
+        else
+        {
+            l = head;
+            Nl = ((Estudiante)l.getData()).getMatricula();
+            for( l = head; Nl <= obj && l.getNext()!= null; l = l.getNext()){
+                Nl = ((Estudiante)l.getData()).getMatricula(); 
+            }
+                Nl = ((Estudiante)l.getData()).getMatricula(); 
+                if(Nl <= obj && l.getNext() == null) l.setNext(n);
+                else
+                {
+                    for(k = head ; k.getNext() != l ; k = k.getNext());
+                        k.setNext(n);
+                        n.setNext(l);
+                }
+        }
     }
     public void Eliminar (Nodo d){
         Nodo l;
