@@ -1,4 +1,19 @@
+/*
+En esta clase usaremos File,FileReader,BufferedReader y StringBuilder para leer un archivo de texto que contiene los datos 
+de los estudiantes se recomienda que estos sean investigados por separados para un mejor dominio de ellos, asi como el uso
+de split.
 
+Tambien crearemos un objeto utilizando nuestra clase estudiante el cual sera enviado a un nodo para luego ser almacenado
+en la lista, utilizaremos .trim() para eliminar los posibles espacios en blancos a la hora de llenar los string de nuestra 
+clase Estudiante.
+
+A medida que se ejecute el proceso iremos comparando los datos que leemos del archivo de texto para que al almacenarlos no
+exista duplicidad de estudiantes, y al hacerlos tomaremos de referencia la matricula.
+
+Al final recorreremos la lista haciendo un cast Estudiante a los datos almacenados en la lista para imprimir los valores
+almacenados en los nodos.
+
+*/
 import java.io.*;
 
 public class ListaEstudiantes {
